@@ -1,14 +1,19 @@
-import './App.css'
+import { BrowserRouter, Route, Routes } from "react-router";
+import "./App.css";
+import Home from "./pages/Home";
+import Navbar from "./components/global/Navbar";
+import Footer from "./components/global/Footer";
 
 function App() {
-
-  return (  
-    <div >
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>    
-    </div>
-  )
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
